@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>FormValidation</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+</head>
+
+<body>
+
+        <div class="my-form">
+
+                <div class="validation">
+
+
+                        <div>
+                                <h1>Form Validation</h1>
+
+
+                                <div class="nom-validate">
+                                        <div>Nom:</div>
+                                        <div>
+                                                <input id="nom" type="text" name="nom" placeholder="tapez votre nom">
+                                        </div>
+
+                                </div>
+
+                                <div class="prenom-validate">
+                                        <div>Prenom:</div>
+                                        <div>
+                                                <input id="prenom" type="text" name="prenom"
+                                                        placeholder="tapez votre prenom">
+                                        </div>
+
+                                </div>
+
+                                <div class="adr-validate">
+                                        <div>Adresse:</div>
+                                        <div>
+                                                <input id="adresse" type="text" name="adr" placeholder="votre adresse">
+                                        </div>
+
+                                </div>
+
+
+                                <div class="mail-validate">
+                                        <div>E-mail:</div>
+                                        <div>
+                                                <input id="email" type="email" name="mail"
+                                                        placeholder="tapez votre email">
+
+                                        </div>
+
+                                </div>
+                                <div class="pwd-validate">
+                                        <div>Password:</div>
+                                        <div>
+                                                <input id="password" type="password" name="pwd" placeholder="password">
+                                        </div>
+
+
+                                </div>
+                                <div class="cmt-validate">
+                                        <div>Comments:</div>
+                                        <div>
+                                                <textarea rows="2" cols="25" type="text" name="cmt">
+                                    </textarea>
+                                        </div>
+                                </div>
+                                <div class="btn-validate">
+
+                                        <button class="btn-submit" onclick=validation()>Submit</button>
+
+                                </div>
+                                <div class="button-validate">
+                                        <button class="btn-reset" type="reset" onclick=reset(prenom,nom,adress,pwd,mail)>Reset</button>
+                                </div>
+
+                        </div>
+
+
+
+                </div>
+        </div>
+        </form>
+        <script>
+                let prenom = document.getElementById('prenom');
+                let nom = document.getElementById('nom');
+                let adress = document.getElementById('adresse');
+                let pwd = document.getElementById('password');
+                let mail = document.getElementById('email');
+
+
+
+
+                function test(prenom, nom, adress, pwd, mail) {
+                      
+                        console.log(name)
+
+                        if (prenom.value === "") {
+                                alert("prenom")
+
+                        }
+                         if (adress.value === "") {
+                                alert("adress")
+                        }
+                         if (nom.value === "") {
+                                alert("nom")
+                        }
+                        if (pwd.value === "") {
+                                alert("pwd")
+                        }
+                         if (mail.value === "") {
+                                alert("mail")
+                        }
+                }
+
+
+                function password(pwd) {
+                        let password = pwd.value
+                        if (password.length > 8) {
+                                alert("verfiez votre mot de pass");
+                        }
+
+                        else if (password.includes(["A" -"Z"]) == false) {
+                                alert("verfiez votre mot de pass");
+                        }
+
+                        else if (password.includes([1 - 9]) == false) {
+                                alert("verfiez votre mot de pass");
+                        }
+
+
+                }
+                function validation() {
+                        test(prenom, nom, adress, pwd, mail);
+                        password(pwd);
+                }
+                function reset (prenom,nom,adress,pwd,mail){
+                     prenom.value="" 
+                     nom.value=""
+                     adress.value=""
+                     pwd.value=""
+                     mail.value=""
+
+                }
+        </script>
+</body>
+
+
+
+</html>
